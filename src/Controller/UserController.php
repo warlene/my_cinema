@@ -14,7 +14,6 @@
 
     public function registerAction()
     {
-      echo "titi\n";
       $this->render('register');
       if (isset($_POST['email']) && isset($_POST['password'])) {
         $userModel = new \Model\UserModel;
@@ -24,8 +23,17 @@
 
     public function loginAction()
     {
-      echo "toto\n";
+      $this->render('login');
+      if (isset($_POST['email_login']) && isset($_POST['password_login'])) {
+        $email = $_POST['email_login'];
+        $password = $_POST['password_login'];
 
+        $userModel = new \Model\UserModel;
+        $login = $userModel->read($email, $password);
+        if (!$login) {
+          echo "Login ou mot de passe inconnu.";
+        }
+      }
       // if(isset($_POST['email'])) {
       //   $login = new UserModel ;
       //   $check = $login->check_login($_POST['email'],$_POST['password']);

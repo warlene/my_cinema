@@ -1,6 +1,8 @@
 <?php
   namespace Model;
 
+  use \PDO;
+  
   class UserModel extends \Core\Database
   {
     private $email;
@@ -27,7 +29,8 @@
 
     public function read($email, $password)
     {
-      $select = "SELECT email, password FROM users WHERE email=:email AND password=:password";
+      $select = "SELECT email, password FROM users
+                 WHERE email=:email AND password=:password";
       $req = $this->pdo->prepare($select);
       $req->execute(array(':email' => $email, ':password' => $password));
       $result = $req->fetch(PDO::FETCH_ASSOC);
