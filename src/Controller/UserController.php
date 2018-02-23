@@ -2,8 +2,9 @@
   namespace Controller;
 
   use \Model\UserModel;
+  use \Core\Controller;
 
-  class UserController extends \Core\Controller
+  class UserController extends Controller
   {
     public function indexAction()
     {

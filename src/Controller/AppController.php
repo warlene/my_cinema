@@ -1,7 +1,9 @@
 <?php
   namespace Controller;
 
-  class AppController extends \Core\Controller
+  use \Core\Controller;
+
+  class AppController extends Controller
   {
     public function indexAction()
     {
