@@ -3,7 +3,7 @@
 
   class AppController extends \Core\Controller
   {
-    public static function indexAction()
+    public function indexAction()
     {
       echo "AppController  et indexAction appelés \n";
     }
