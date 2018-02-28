@@ -6,20 +6,31 @@
 
   class UserController extends Controller
   {
+
     public function indexAction()
     {
       echo "UserController et indexAction sont utilisés \n";
       $this->render('index', ['couleur'=>'rose']);
-
     }
 
     public function registerAction()
     {
       $this->render('register');
-      if (isset($_POST['email']) && isset($_POST['password'])) {
-        $userModel = new \Model\UserModel;
-        $userModel->create($_POST['email'], $_POST['password']);
+      $user = new UserModel(["id"=>3, "table" => "users"]);
+      if ($user->id) {
+        echo "ID EXISTANT";
       }
+      // $id = $orm->create('users', ['email' => $this->request->email, 'password' => $this->request->password]);
+      // $name = $orm->read('users', 7);
+      // $id = $orm->find('users', ['WHERE' => '2', 'ORDER BY' => 'id ASC', 'LIMIT' => 7]);
+      // if (isset($this->request->"email") && isset($_POST['password'])) {
+        // $userModel = new \Core\ORM;
+        // $userModel->create('users', $_POST['password']);
+      // }
+      // if (isset($_POST['email']) && isset($_POST['password'])) {
+      //   $userModel = new \Model\UserModel;
+      //   $userModel->create($_POST['email'], $_POST['password']);
+      // }
     }
 
     public function loginAction()

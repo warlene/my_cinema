@@ -1,20 +1,17 @@
 <?php
   namespace Core;
 
-  class REQUEST
+  class Request
   {
-    protected $get;
-    protected $post;
-
-    public function __construct($_GET, $_POST)
+    public function __construct()
     {
-      $this->get = $_GET;
-      $this->post = $_POST;
-    }
+      foreach ($_POST as $key => $value) {
+         $this->$key = htmlspecialchars(stripslashes(trim($value)));
+      }
 
-    protected function clean_input()
-    {
-      
+      foreach ($_GET as $key => $value) {
+        $this->$key = htmlspecialchars(stripslashes(trim($value)));
+      }
     }
   }
 ?>

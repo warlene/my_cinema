@@ -1,8 +1,8 @@
 <?php
   namespace Core;
 
-  use \PDO ;
-  
+  use \PDO;
+
   class Database {
 
     private $user = "root";
