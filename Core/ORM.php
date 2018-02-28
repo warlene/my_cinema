@@ -12,7 +12,7 @@
       $this->pdo = parent::__construct();
     }
 
-    public static function create($table, $fields)
+    public function create($table, $fields)
     {
       $var = "";
       $params = [];
@@ -31,7 +31,7 @@
       return $req->errorInfo();
     }
 
-    public static function read($table, $id)
+    public function read($table, $id)
     {
       $select = "SELECT * FROM $table WHERE id = :id";
       $req = $this->pdo->prepare($select);
@@ -40,7 +40,7 @@
       return $result;
     }
 
-    public static function update($table, $id, $fields)
+    public function update($table, $id, $fields)
     {
       $set = "";
       $exe = [":id" => $id];
@@ -59,7 +59,7 @@
       return false;
     }
 
-    public static function delete($table, $id)
+    public function delete($table, $id)
     {
       $delete = "DELETE FROM $table WHERE id = $id";
       $req = $this->pdo->query($delete);
@@ -70,19 +70,14 @@
       return false;
     }
 
-    public static function find($table, $params = array('WHERE' => '1', 'ORDER BY' => 'id ASC', 'LIMIT' => ''))
+    public function find($table, $params = array('WHERE' => '1', 'ORDER BY' => 'id ASC', 'LIMIT' => ''))
     {
       $select = "SELECT * FROM $table ";
-
       foreach ($params as $key => $value) {
-        if ($key == 'WHERE') {
-          $select .= "$key id = $value ";
-        }
-        elseif ($key != 'LIMIT' || $key == 'LIMIT' && !empty($value)) {
+        if ($key != 'LIMIT' || $key == 'LIMIT' && !empty($value)) {
           $select .= "$key $value ";
         }
       }
-
       $req = $this->pdo->query($select);
       $result = $req->fetch(PDO::FETCH_ASSOC);
 

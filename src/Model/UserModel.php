@@ -7,12 +7,14 @@
   {
     public function __construct($params)
     {
-
+      parent::__construct($params);
     }
 
     public function save()
     {
-      return Entity::create();
+      return parent::save();
     }
+
+    
   }
 ?>
