@@ -16,19 +16,21 @@
     public function registerAction()
     {
       $this->render('register');
-      $user = new UserModel(["email" => $this->request->email, "password" => $this->request->password]);
-      $user->save();
-
+      if (isset($this->request->email)) {
+        $user = new UserModel(["email" => $this->request->email, "password" => $this->request->password]);
+        $user->save();
+      }
     }
 
     public function loginAction()
     {
       $this->render('login');
-
-      $userModel = new UserModel(["WHERE" => "email = '" . $this->request->email_login . "' AND password = '" . $this->request->password_login . "'"]);
-      $login = $userModel->find();
-      if (!$login) {
-        echo "Login ou mot de passe inconnu.";
+      if (isset($this->request->email_login)) {
+        $userModel = new UserModel(["WHERE" => "email = '" . $this->request->email_login . "' AND password = '" . $this->request->password_login . "'"]);
+        $login = $userModel->find();
+        if (!$login) {
+          echo "Login ou mot de passe inconnu.";
+        }
       }
     }
 
