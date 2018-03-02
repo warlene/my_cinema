@@ -10,7 +10,7 @@
     public function indexAction()
     {
       echo "UserController et indexAction sont utilisés \n";
-      $this->render('index', ['couleur'=>'rose']);
+      $this->render('index', ['couleur'=>'vert']);
     }
 
     public function registerAction()
@@ -35,4 +35,3 @@
     }
 
   }
-?>
