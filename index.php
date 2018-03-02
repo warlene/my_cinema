@@ -6,8 +6,7 @@
 
   $app = new Core\Core();
   $app->run();
-  //RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?c=$1
 ?>
-<pre><?php var_dump($_GET); ?></pre>
+<!-- <pre><?php var_dump($_GET); ?></pre>
 <pre><?php var_dump($_POST); ?></pre>
-<pre><?php var_dump($_SERVER); ?></pre>
+<pre><?php var_dump($_SERVER); ?></pre> -->

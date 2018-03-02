@@ -25,8 +25,6 @@
       } else {
         include 'src/View/Error/404.php';
       }
-    echo __CLASS__ . " [OK]" . PHP_EOL;
-
     }
   }
 

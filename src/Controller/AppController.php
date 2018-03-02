@@ -7,7 +7,7 @@
   {
     public function indexAction()
     {
-      echo "AppController  et indexAction appelés \n";
+      $this->render('index');
     }
 
   }
