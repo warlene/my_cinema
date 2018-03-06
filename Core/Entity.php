@@ -21,17 +21,17 @@
       }
     }
 
-    public function create()
+    public function create($table)
     {
-      return $this->orm->create($this->table, $this->id, $this->params);
+      return $this->orm->create($table, $this->id, $this->params);
     }
 
-    public function save()
+    public function save($table)
     {
       if (isset($this->id)) {
-        return $this->orm->update($this->table, $this->id, $this->params);
+        return $this->orm->update($table, $this->id, $this->params);
       } else {
-        return $this->orm->create($this->table, $this->params);
+        return $this->orm->create($table, $this->params);
       }
     }
 

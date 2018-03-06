@@ -32,6 +32,27 @@
 
     public function add_filmAction()
     {
-      $this->render('film_form');
+      $tab = new FilmModel([]);
+      $genre = $tab->find('genre');
+
+      $params_genre = [];
+      for ($i=0; $i<count($genre); $i++) {
+        $params_genre[$genre[$i]['id_genre']] = $genre[$i]['nom'];
+      }
+
+      $distrib = $tab->find('distrib');
+      $params_distrib = [];
+      for ($i=0; $i<count($distrib); $i++) {
+        $params_distrib[$distrib[$i]['id_distrib']] = $distrib[$i]['nom'];
+      }
+
+      $this->render('film_form', ["genres" => $params_genre, "distribs" => $params_distrib]);
+
+      if(isset($this->request->title)) {
+        var_dump($this->request);
+        $film = new FilmModel(["title" => $this->request->title, "id_genre" => $this->request->genre, "id_distrib" => $this->request->distrib, "annee_prod" => $this->request->annee_prod, "date_debut" =>  $this->request->date_debut, "date_fin" =>  $this->request->date_fin, "duree_min" =>  $this->request->duree_min, "resum" =>  $this->request->resum]);
+        $add = $film->create('film');
+        var_dump($add);
+      }
     }
   }

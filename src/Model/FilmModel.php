@@ -14,4 +14,10 @@
     {
       return parent::find($table);
     }
+
+    public function create($table)
+    {
+      return parent::create($table);
+
+    }
   }
