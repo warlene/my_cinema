@@ -14,7 +14,6 @@
 
     public function registerAction()
     {
-      // $this->render('register');
       if (isset($this->request->email)) {
         $userModel = new UserModel(["WHERE" => "lastname = '" . $this->request->lastname . "' AND firstname = '" . $this->request->firstname . "'  AND email = '" . $this->request->email . "'"]);
         $user_exists = $userModel->find();
@@ -35,14 +34,24 @@
 
     public function loginAction()
     {
-      // $this->render('login');
-      if (isset($this->request->email_login)) {
-        $userModel = new UserModel(["WHERE" => "email = '" . $this->request->email_login . "' AND password = '" . $this->request->password_login . "'"]);
-        $login = $userModel->find();
+      if (isset($this->request->email)) {
+        $userModel = new UserModel(["WHERE" => "email = '" . $this->request->email . "' AND password = '" . sha1($this->request->password) . "'"]);
+        $login = $userModel->find('users');
         if (!$login) {
           echo "Login ou mot de passe inconnu.";
+        } else {
+          $this->render('index', ["lastname" => $login[0]['lastname'], "firstname" => $login[0]['firstname'] ]);
+          $_SESSION['lastname'] = $login[0]['lastname'];
+          $_SESSION['firstname'] = $login[0]['firstname'];
+          $_SESSION['id_user'] = $login[0]['id'];
         }
       }
     }
 
+    public function logoutAction()
+    {
+      $this->render('logout');
+      $_SESSION = array();
+      session_destroy();
+    }
   }

@@ -18,7 +18,11 @@
       if (class_exists($controller_name)) {
         $obj = new $controller_name();
         if (method_exists($controller_name, $action_name)) {
-          $obj->$action_name();
+          if (isset($call['params'])) {
+            $obj->$action_name($call['params']);
+          } else {
+            $obj->$action_name();
+          }
         } else {
             include 'src/View/Error/404.php';
         }

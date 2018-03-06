@@ -1,0 +1,36 @@
+body {
+  color: #1f5468;
+}
+
+.btn-list, .btn-go {
+  background-color: #f27958;
+  color: #fff;
+}
+
+.btn-list {
+  margin-top: 10%;
+  margin-bottom: 30%;
+}
+
+.btn-go {
+  margin-left: 10px;
+}
+
+.main-content {
+  margin-left: -15px;
+  padding-left: 0;
+}
+
+tbody tr:hover {
+  background-color: #f4975e;
+  color: #fff;
+}
+
+.navbarInline {
+  background-color: #d4f1e9;
+  font-size: 1.2em;
+}
+
+.info_film {
+  text-align: left;
+}

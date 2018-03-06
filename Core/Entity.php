@@ -40,9 +40,9 @@
       return $this->orm->delete($this->table, $this->id);
     }
 
-    public function find()
+    public function find($table)
     {
-      return $this->orm->find($this->table, $this->params);
+      return $this->orm->find($table, $this->params);
     }
   }
 ?>

@@ -79,8 +79,7 @@
         }
       }
       $req = $this->pdo->query($select);
-      $result = $req->fetch(PDO::FETCH_ASSOC);
-
+      $result = $req->fetchAll();
       return $result;
     }
   }
