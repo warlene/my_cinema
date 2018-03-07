@@ -10,11 +10,10 @@
       parent::__construct($params);
     }
 
-    public function save()
+    public function save($table)
     {
-      return parent::save();
+      return parent::save($table);
     }
 
-    
   }
 ?>

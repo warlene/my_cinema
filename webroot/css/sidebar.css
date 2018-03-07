@@ -10,6 +10,7 @@
   background: linear-gradient(#F17153, #F58D63, #f1ab53);
   /* Standard syntax */
   padding: 0px;
+  font-family: "CaviarDreams_Bold";
   min-height: 100%;
 }
 
@@ -23,6 +24,13 @@
 .list {
   color: #fff;
   font-size: 1.4em;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.underlist {
+  color: #fff;
+  font-size: 1em;
   list-style: none;
   padding-left: 0px;
 }
@@ -53,4 +61,9 @@
 
 .form_film {
   text-align: right;
+}
+
+.error {
+  color: #f27958;
+  font-weight: bold;
 }

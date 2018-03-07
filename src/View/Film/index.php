@@ -4,7 +4,7 @@
   <div class="row">
       <div class="col-lg-12">
           <div class="page-header">
-              <h1>La filmothèque de MyCinema</h1>
+              <h1>La Filmotheque de MyCinema</h1>
           </div>
       </div>
   </div>
@@ -34,7 +34,7 @@
               <tbody>
                 @foreach ($film as $key => $value)
                   <tr>
-                      <td><a href="/work/PiePHP/film/info/{{$value['id_film']}}" class="film" style="display:block;width:100%;height:100%;">{{$value['titre']}}</a></td>
+                      <td><a href="/work/PiePHP/film/info/{{$value['id']}}" class="film" style="display:block;width:100%;height:100%;">{{$value['titre']}}</a></td>
                       <!-- <td>{{$value['genre']}}</td> -->
                       <td>{{$value['duree_min']}}</td>
                       <td>{{$value['annee_prod']}}</td>

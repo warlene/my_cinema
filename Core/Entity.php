@@ -23,7 +23,7 @@
 
     public function create($table)
     {
-      return $this->orm->create($table, $this->id, $this->params);
+      return $this->orm->create($table, $this->params);
     }
 
     public function save($table)

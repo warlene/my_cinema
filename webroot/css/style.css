@@ -2,6 +2,22 @@ body {
   color: #1f5468;
 }
 
+@font-face {
+  font-family: "Saniretro";
+  src: url("../assets/font/Saniretro.ttf");
+}
+
+@font-face {
+  font-family: "CaviarDreams_Bold";
+  src: url("../assets/font/CaviarDreams_Bold.ttf");
+}
+
+.main-content h1 {
+  color: #083b57;
+  font-family: "Saniretro";
+  font-size: 4em;
+}
+
 .btn-list, .btn-go {
   background-color: #f27958;
   color: #fff;
@@ -17,8 +33,10 @@ body {
 }
 
 .main-content {
+  font-family: "CaviarDreams_Bold";
   margin-left: -15px;
   padding-left: 0;
+  color: #083b57;
 }
 
 tbody tr:hover {
@@ -26,8 +44,13 @@ tbody tr:hover {
   color: #fff;
 }
 
+td {
+  text-align: left;
+}
+
 .navbarInline {
   background-color: #d4f1e9;
+  font-family: "CaviarDreams_Bold";
   font-size: 1.2em;
 }
 

@@ -13,9 +13,6 @@
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -34,26 +31,21 @@
               <br>
               <div class="left-navigation">
                   <ul class="list">
-                      <li>Accueil</li>
-                      <!-- <li>film</li> -->
-                      <li>
-                        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Film</a>
-                        <div class="row">
-                          <div class="col">
-                            <div class="collapse" id="collapseExample">
-                                <!-- <div class="card card-body"> -->
-                                <a class="collapse-item" href="/work/PiePHP/film/add">Ajouter un film</a>
-                                <a class="collapse-item" href="#">Modifier un film</a>
-                                <a class="collapse-item" href="#">Supprimer un film</a>
-                              <!-- </div> -->
-                            </div>
+                    <li><a href="/work/PiePHP/film">Accueil</a></li>
+                    <li>
+                      <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Film</a>
+                          <div class="collapse" id="collapseExample">
+                              <!-- <div class="card card-body"> -->
+                              <ul class="underlist">
+                                <li><a href="/work/PiePHP/film/add">Ajouter un film</a></li>
+                                <li><a href="#">Modifier un film</a></li>
+                                <li><a href="#">Supprimer un film</a></li>
+                              </ul>
+                            <!-- </div> -->
                           </div>
-                        </div>
-
-
-                      </li>
-                      <li>genre</li>
-                      <li>historique</li>
+                    </li>
+                    <li>genre</li>
+                    <li>historique</li>
                   </ul>
               </div>
           </div>
@@ -91,7 +83,7 @@
                       Mon Profil
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Voir mon profil</a>
+                      <a class="dropdown-item" href="/work/PiePHP/user/profil">Voir mon profil</a>
                       <a class="dropdown-item" href="#">Modifier mon profil</a>
                       <a class="dropdown-item" href="#">Something else here</a>
                     </div>

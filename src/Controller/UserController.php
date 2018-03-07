@@ -19,7 +19,7 @@
         $user_exists = $userModel->find();
         if (!$user_exists) {
           $user = new UserModel(["lastname" => $this->request->lastname, "firstname" => $this->request->firstname, "email" => $this->request->email, "password" => sha1($this->request->password)]);
-          $id = $user->save();
+          $id = $user->save('users');
           if (!is_array($id)) {
             $this->render('index', ["lastname" => $this->request->lastname, "firstname" => $this->request->firstname]);
             $_SESSION['lastname'] = $this->request->lastname;
@@ -53,5 +53,10 @@
       $this->render('logout');
       $_SESSION = array();
       session_destroy();
+    }
+
+    public function profilAction()
+    {
+        $this->render('profil');
     }
   }

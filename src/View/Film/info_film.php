@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="info_film">
-               <h1>Film : {{$title}}</h1>
+               <h2>Film : {{$title}}</h2>
                <p>Genre : {{$genre}}</p>
                <p>Durée : {{$duree_min}}</p>
                <p>Année de production : {{$annee_prod}}</p>

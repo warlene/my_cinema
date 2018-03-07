@@ -70,6 +70,11 @@
                   </div>
                 </div>
               </form>
+              <?php if (isset($error)): ?>
+              <div class="error">
+                <p><?= htmlspecialchars($error)?></p>
+              </div>
+              <?php endif; ?>
             </div>
         </div>
     </div>

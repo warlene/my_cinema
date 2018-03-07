@@ -9,7 +9,7 @@
 
     public function indexAction()
     {
-      $filmModel = new FilmModel(["LIMIT" => "20"]);
+      $filmModel = new FilmModel(["ORDER BY" => "titre ASC", "LIMIT" => "20"]);
       $film = $filmModel->find('film');
       $this->render('index', ['film' => $film]);
     }
@@ -21,7 +21,7 @@
 
     public function info_filmAction($params)
     {
-      $filmModel = new FilmModel(["WHERE" => "id_film = " . $params[0]]);
+      $filmModel = new FilmModel(["WHERE" => "id = " . $params[0]]);
       $film = $filmModel->find('film');
       $film = $film[0];
       $genre = new FilmModel(["WHERE" => "id_genre = " . $film['id_genre']]);
@@ -49,10 +49,15 @@
       $this->render('film_form', ["genres" => $params_genre, "distribs" => $params_distrib]);
 
       if(isset($this->request->title)) {
-        var_dump($this->request);
-        $film = new FilmModel(["title" => $this->request->title, "id_genre" => $this->request->genre, "id_distrib" => $this->request->distrib, "annee_prod" => $this->request->annee_prod, "date_debut" =>  $this->request->date_debut, "date_fin" =>  $this->request->date_fin, "duree_min" =>  $this->request->duree_min, "resum" =>  $this->request->resum]);
-        $add = $film->create('film');
-        var_dump($add);
+        $tab = new FilmModel(["WHERE" => "titre = '" . $this->request->title . "'"]);
+        $title = $tab->find('film');
+        if (!$title) {
+          $film = new FilmModel(["titre" => $this->request->title, "id_genre" => $this->request->genre, "id_distrib" => $this->request->distrib, "annee_prod" => $this->request->annee_prod, "date_debut" =>  $this->request->date_debut, "date_fin" =>  $this->request->date_fin, "duree_min" =>  $this->request->duree_min, "resum" =>  $this->request->resum]);
+          $add = $film->create('film');
+          $this->render('add_validate', ["title" =>  $this->request->title]);
+        } else {
+          $this->render('film_form', ["genres" => $params_genre, "distribs" => $params_distrib, "error" => "Ce film est déjà répertorié dans notre Filmothèque. Vous pouvez le modifier dans la section \"Modifer un film\"."]);
+        }
       }
     }
   }

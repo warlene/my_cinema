@@ -79,7 +79,10 @@
         }
       }
       $req = $this->pdo->query($select);
-      $result = $req->fetchAll();
-      return $result;
+      if ($req) {
+        $result = $req->fetchAll();
+        return $result;
+      }
+      return false;
     }
   }
