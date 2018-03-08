@@ -5,14 +5,15 @@
 
   class Entity
   {
-    private $table = "users";
+    private $table;
     private $params = [];
     private $orm;
 
-    public function __construct($params)
+    public function __construct($params, $table = 'users')
     {
       $this->orm = new ORM;
       $this->params = $params;
+      $this->table = $table;
       if (isset($params['id'])) {
         $this->params = $this->orm->read($this->table, $params['id']);
       }

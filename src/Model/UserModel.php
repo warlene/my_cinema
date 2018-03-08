@@ -5,9 +5,9 @@
 
   class UserModel extends \Core\Entity
   {
-    public function __construct($params)
+    public function __construct($params, $table)
     {
-      parent::__construct($params);
+      parent::__construct($params, $table);
     }
 
     public function save($table)
