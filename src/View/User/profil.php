@@ -10,53 +10,31 @@
               <form method='POST' action=''>
                 <div class="form-group row">
                   <label for="title_film" class="col-4 col-form-label">votre film préféré</label>
-                  <div class="col-6">
-                    <input class="form-control" type="text" name="title" id="title_film">
+                  <div class="col-4">
+                    <input class="form-control" type="text" name="best_film" id="best_film">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="distrib" class="col-4 col-form-label">Vos genres favoris</label>
-                  <div class="col-6">
-                    <select class="form-control" name="distrib" id="distrib" style="height:35px;">
+                  <label for="genres" class="col-4 col-form-label">Vos genres favoris</label>
+                  <div class="col-4">
+                    <select multiple class="selectpicker col-12" name="genres" id="genres" style="height:100px;">
                       <option value=""></option>
-                      <option value=""></option>
+                      @foreach ($genres as $key => $genre)
+                      <option value={{$genre}}>{{$genre}}</option>
+                      @endforeach
                     </select>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="date_prod" class="col-4 col-form-label">le dernier film vu:</label>
-                  <div class="col-6">
-                    <input class="form-control" type="text" name="annee_prod" placeholder="ex: 2001" id="date_prod">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="date_debut" class="col-4 col-form-label">Vos genres favoris</label>
-                  <div class="col-6">
-                    <input class="form-control" type="date" name="date_debut" id="date_debut">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="date_fin" class="col-4 col-form-label">date de fin d'exploitation en salle</label>
-                  <div class="col-6">
-                    <input class="form-control" type="date" name="date_fin" id="date_fin">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="duree_min" class="col-4 col-form-label">Durée</label>
-                  <div class="col-6">
-                    <input class="form-control" type="text" name="duree_min" placeholder="en minutes" id="duree_min">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="resum" class="col-4 col-form-label">Résumé</label>
-                  <div class="col-6">
-                    <input class="form-control" type="textarea" name="resum" id="resum">
+                  <label for="last_film" class="col-4 col-form-label">le dernier film vu:</label>
+                  <div class="col-4">
+                    <input class="form-control" type="text" name="last_film" id="last_film">
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="resum" class="col-4 col-form-label"></label>
-                  <div class="col-6">
-                    <input class="btn" type="submit" value="Ajouter" id="valider">
+                  <div class="col-4">
+                    <input class="btn add" type="submit" value="Ajouter" id="valider">
                   </div>
                 </div>
               </form>

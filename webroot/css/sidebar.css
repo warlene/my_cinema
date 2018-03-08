@@ -35,6 +35,10 @@
   padding-left: 0px;
 }
 
+.underlist>li, h5 {
+  font-size: 0.8em;
+}
+
 .list::first-line {
   color: #095275;
 }
@@ -49,6 +53,10 @@
   color: #fff;
   font-weight: bolder;
   padding-left: 35px;
+}
+
+.collapse.show {
+  visibility: visible;
 }
 
 .main-content {

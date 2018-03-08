@@ -15,5 +15,9 @@
       return parent::save($table);
     }
 
+    public function find($table)
+    {
+      return parent::find($table);
+    }
   }
 ?>

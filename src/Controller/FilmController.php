@@ -16,7 +16,9 @@
 
     public function search_titleAction()
     {
-      $this->render('search_title');
+      $filmModel = new FilmModel(["WHERE" => "titre LIKE '" . $this->request->search_title . "%' OR titre LIKE '% " . $this->request->search_title . "%'", "ORDER BY" => "titre ASC", "LIMIT" => "20"]);
+      $film = $filmModel->find('film');
+      $this->render('search_title', ['search' => $this->request->search_title, 'film' => $film]);
     }
 
     public function info_filmAction($params)

@@ -55,8 +55,28 @@
       session_destroy();
     }
 
-    public function profilAction()
+    public function profilAction($id)
     {
-        $this->render('profil');
+      var_dump($id);
+      $tab = new UserModel(['id' => intval($id)]);
+      var_dump($tab->id);
+      $genre = $tab->find('genre');
+      $params_genre = [];
+      for ($i=0; $i<count($genre); $i++) {
+        $params_genre[$genre[$i]['id_genre']] = $genre[$i]['nom'];
+      }
+      $this->render('profil', ["genres" => $params_genre]);
+
+      if(isset($this->request->best_film)) {
+        var_dump($this->request);
+          $film = new UserModel(["id_user" => $_SESSION['id_user'], "best_film" => $this->request->best_film, "genres" => $this->request->genres, "last_film" => $this->request->last_film]);
+          $add = $film->save('info_user');
+          var_dump($add);
+          $this->render('show', []);
+        }
+        // else {
+          // $this->render('film_form', ["genres" => $params_genre, "error" => "Ce film est déjà répertorié dans notre Filmothèque. Vous pouvez le modifier dans la section \"Modifer un film\"."]);
+        // }
+      // }
     }
   }
