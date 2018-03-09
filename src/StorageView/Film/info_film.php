@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="info_film">
-               <h1>Film : <?= htmlspecialchars($title)?></h1>
+               <h2>Film : <?= htmlspecialchars($title)?></h2>
                <p>Genre : <?= htmlspecialchars($genre)?></p>
                <p>Durée : <?= htmlspecialchars($duree_min)?></p>
                <p>Année de production : <?= htmlspecialchars($annee_prod)?></p>

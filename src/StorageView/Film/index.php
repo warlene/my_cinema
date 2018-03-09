@@ -27,6 +27,7 @@
               <thead>
                   <tr>
                       <th>Titre</th>
+                      <th>Genre</th>
                       <th>Année</th>
                       <th>Durée du film</th>
                   </tr>
@@ -35,7 +36,7 @@
                 <?php foreach ($film as $key => $value): ?>
                   <tr>
                       <td><a href="/work/PiePHP/film/info/<?= htmlspecialchars($value['id'])?>" class="film" style="display:block;width:100%;height:100%;"><?= htmlspecialchars($value['titre'])?></a></td>
-                      <!-- <td><?= htmlspecialchars($value['genre'])?></td> -->
+                      <td><?= htmlspecialchars($genre[intval($value['id_genre'])]['nom'])?></td>
                       <td><?= htmlspecialchars($value['annee_prod'])?></td>
                       <td><?= htmlspecialchars($value['duree_min'])?></td>
                   </tr>

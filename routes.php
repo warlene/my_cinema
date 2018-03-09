@@ -7,6 +7,8 @@
   Router::connect('/user/login',  ['controller' => 'user', 'action' => 'login']);
   Router::connect('/user/logout',  ['controller' => 'user', 'action' => 'logout']);
   Router::connect('/user/profil/',  ['controller' => 'user', 'action' => 'profil']);
+  Router::connect('/user/delete/',  ['controller' => 'user', 'action' => 'delete']);
+
 
   Router::connect('/film',  ['controller' => 'film', 'action' => 'index']);
   Router::connect('/film/info/',  ['controller' => 'film', 'action' => 'info_film']);

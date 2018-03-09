@@ -56,7 +56,7 @@ td {
 }
 
 .navbar-nav {
-  width: 400px;
+  width: 500px;
 }
 
 .nav-item {
@@ -66,4 +66,8 @@ td {
 
 .info_film {
   text-align: left;
+}
+
+#form_user {
+  display: none;
 }

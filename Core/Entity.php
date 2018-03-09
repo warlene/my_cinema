@@ -14,9 +14,14 @@
       $this->orm = new ORM;
       $this->params = $params;
       $this->table = $table;
+
       if (isset($params['id'])) {
-        $this->params = $this->orm->read($this->table, $params['id']);
+        $check = $this->orm->read($this->table, $params['id']);
+        if ($check) {
+          $this->params = $check;
+        }
       }
+
       foreach ($this->params as $key => $value) {
         $this->$key = $value;
       }

@@ -26,6 +26,7 @@
             <table class="table" id="table">
               <tr>
                   <th>Titre</th>
+                  <th>Genre</th>
                   <th>Année</th>
                   <th>Durée du film</th>
               </tr>
@@ -34,7 +35,7 @@
             @foreach ($film as $key => $value)
               <tr>
                   <td><a href="/work/PiePHP/film/info/{{$value['id']}}" class="film" style="display:block;width:100%;height:100%;">{{$value['titre']}}</a></td>
-                  <!-- <td>{{$value['genre']}}</td> -->
+                  <td>{{$genre[intval($value['id_genre'])]['nom']}}</td>
                   <td>{{$value['annee_prod']}}</td>
                   <td>{{$value['duree_min']}}</td>
               </tr>

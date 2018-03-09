@@ -14,10 +14,11 @@
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <script src="/work/PiePHP/webroot/js/form_profil.js"></script>
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script> -->
 
  <title>Pie PHP</title>
 </head>
@@ -40,7 +41,7 @@
                               <ul class="underlist">
                                 <li><a href="/work/PiePHP/film/add">Ajouter un film</a></li>
                                 <li><a href="#">Modifier un film</a></li>
-                                <li><a href="#">Supprimer un film</a></li>
+                                <li><a href="/work/PiePHP/film/delete">Supprimer un film</a></li>
                               </ul>
                           </div>
                     </li>
@@ -65,7 +66,7 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item active">
-                    <a class="nav-link" href="/work/PiePHP/film">Salut <?= $_SESSION['firstname']; ?> !<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/work/PiePHP/film"><?php if (isset($_SESSION['firstname'])) { echo "Salut " . $_SESSION['firstname'] . " !"; } ?><span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,8 +74,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="/work/PiePHP/user/profil/<?= $_SESSION['id_user']; ?>">Voir mon profil</a>
-                      <a class="dropdown-item" href="#">Modifier mon profil</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="/work/PiePHP/user/delete/<?= $_SESSION['id_user']; ?>">Supprimer mon profil</a>
                     </div>
                   </li>
                   <li class="nav-item">
