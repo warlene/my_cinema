@@ -82,6 +82,20 @@
       }
     }
 
+    public function deleteAction($id)
+    {
+      $film = new FilmModel(["id" => $id[0]], "film");
+      $delete = $film->delete();
+      if ($delete) {
+        $this->indexAction();
+        ?>
+        <script>
+            $('.delete_film').textContent = "Le film a bien été supprimé.";
+        </script>
+        <?php
+      }
+    }
+
     private function get_genre()
     {
       $genreModel = new FilmModel([], "");

@@ -18,6 +18,10 @@
     public function create($table)
     {
       return parent::create($table);
+    }
 
+    public function delete()
+    {
+      return parent::delete();
     }
   }

@@ -35,7 +35,7 @@
     {
       $select = "SELECT * FROM $table WHERE id = :id";
       $req = $this->pdo->prepare($select);
-      $req->execute(array(':id' => $id));
+      $req->execute([':id' => $id]);
       $result = $req->fetch(PDO::FETCH_ASSOC);
       return $result;
     }

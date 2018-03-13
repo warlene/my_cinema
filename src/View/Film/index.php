@@ -10,11 +10,12 @@
   </div>
   <div class="row">
       <div class="col-lg-12">
+        <div class="delete_film"></div>
           <h3>Liste de tous les films</h3>
       </div>
   </div>
   <div class="row">
-      <div class="col-lg-4 col-lg-offset-4">
+      <div class="col-lg-5 col-lg-offset-4">
         <form class="form-inline" id="title-form" action="/work/PiePHP/film/search_title" method="POST" role="form">
           <input type="text" id="search_title" name="search_title" class="form-control" placeholder="Rechercher un film par titre" size="32px">
           <input class="btn btn-md btn-go" type="submit" value="Go!">
@@ -30,6 +31,8 @@
                       <th>Genre</th>
                       <th>Année</th>
                       <th>Durée du film</th>
+                      <th></th>
+                      <th></th>
                   </tr>
               </thead>
               <tbody>
@@ -39,7 +42,17 @@
                       <td>{{$genre[intval($value['id_genre'])]['nom']}}</td>
                       <td>{{$value['annee_prod']}}</td>
                       <td>{{$value['duree_min']}}</td>
+                      <td><a href="">Modifier</a></td>
+                      <td><button class="delete" value="{{$value['id']}}" onclick="delete_film({{$value['id']}})">Supprimer</button></td>
                   </tr>
+                  <script>
+                  function delete_film(id) {
+                    if (confirm("Êtes-vous sûr de vouloir supprimer ce film?")) {
+                      console.log("http://localhost/work/PiePHP/film/delete/"+id);
+                      document.location.href = "http://localhost/work/PiePHP/film/delete/"+id;
+                    }
+                  }
+                </script>
                 @endforeach
               </tbody>
           </table>

@@ -87,3 +87,4 @@
         </div>
     </div>
 </div>
+<script src="/work/PiePHP/webroot/js/form_profil.js"></script>
