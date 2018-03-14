@@ -56,7 +56,7 @@
       if ($req->execute($exe)) {
         return true;
       }
-      return false;
+      return $req->errorInfo();
     }
 
     public function delete($table, $id)

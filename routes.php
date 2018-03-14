@@ -14,3 +14,5 @@
   Router::connect('/film/add',  ['controller' => 'film', 'action' => 'add_film']);
   Router::connect('/film/search_title',  ['controller' => 'film', 'action' => 'search_title']);
   Router::connect('/film/delete/',  ['controller' => 'film', 'action' => 'delete']);
+  Router::connect('/film/modify/',  ['controller' => 'film', 'action' => 'modify']);
+  Router::connect('/film/modifyValid',  ['controller' => 'film', 'action' => 'modify_validate']);

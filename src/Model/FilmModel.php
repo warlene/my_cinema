@@ -24,4 +24,9 @@
     {
       return parent::delete();
     }
+    
+    public function save($table)
+    {
+      return parent::save($table);
+    }
   }

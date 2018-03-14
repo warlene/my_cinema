@@ -27,31 +27,30 @@
           <table class="table" id="table">
               <thead>
                   <tr>
+                      <th>Modifier</th>
                       <th>Titre</th>
                       <th>Genre</th>
                       <th>Année</th>
                       <th>Durée du film</th>
-                      <th></th>
                       <th></th>
                   </tr>
               </thead>
               <tbody>
                 <?php foreach ($film as $key => $value): ?>
                   <tr>
+                      <td><a href="/work/PiePHP/film/modify/<?= htmlspecialchars($value['id'])?>"><i class="glyphicon glyphicon-edit"></i></a></td>
                       <td><a href="/work/PiePHP/film/info/<?= htmlspecialchars($value['id'])?>" class="film" style="display:block;width:100%;height:100%;"><?= htmlspecialchars($value['titre'])?></a></td>
                       <td><?= htmlspecialchars($genre[intval($value['id_genre'])]['nom'])?></td>
                       <td><?= htmlspecialchars($value['annee_prod'])?></td>
                       <td><?= htmlspecialchars($value['duree_min'])?></td>
-                      <td><a href="">Modifier</a></td>
-                      <td><button class="delete" value="<?= htmlspecialchars($value['id'])?>" onclick="delete_film(<?= htmlspecialchars($value['id'])?>)">Supprimer</button></td>
+                      <td><button class="delete" value="<?= htmlspecialchars($value['id'])?>" onclick="delete_film(<?= htmlspecialchars($value['id'])?>)"><i class="glyphicon glyphicon-trash"></i></button></td>
                   </tr>
                   <script>
-                  function delete_film(id)
-                  {
-                      if (confirm("Êtes-vous sûr de vouloir supprimer ce film?")) {
-                        console.log("http://localhost/work/PiePHP/film/delete/"+id);
-                        document.location.href = "http://localhost/work/PiePHP/film/delete/"+id;
-                      }
+                  function delete_film(id) {
+                    if (confirm("Êtes-vous sûr de vouloir supprimer ce film?")) {
+                      console.log("http://localhost/work/PiePHP/film/delete/"+id);
+                      document.location.href = "http://localhost/work/PiePHP/film/delete/"+id;
+                    }
                   }
                 </script>
                 <?php endforeach; ?>
@@ -61,4 +60,3 @@
       </div>
   </div>
 </div>
-<!-- <script src="/work/PiePHP/webroot/js/delete_film.js"></script> -->

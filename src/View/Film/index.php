@@ -27,23 +27,23 @@
           <table class="table" id="table">
               <thead>
                   <tr>
+                      <th>Modifier</th>
                       <th>Titre</th>
                       <th>Genre</th>
                       <th>Année</th>
                       <th>Durée du film</th>
-                      <th></th>
                       <th></th>
                   </tr>
               </thead>
               <tbody>
                 @foreach ($film as $key => $value)
                   <tr>
+                      <td><a href="/work/PiePHP/film/modify/{{$value['id']}}"><i class="glyphicon glyphicon-edit"></i></a></td>
                       <td><a href="/work/PiePHP/film/info/{{$value['id']}}" class="film" style="display:block;width:100%;height:100%;">{{$value['titre']}}</a></td>
                       <td>{{$genre[intval($value['id_genre'])]['nom']}}</td>
                       <td>{{$value['annee_prod']}}</td>
                       <td>{{$value['duree_min']}}</td>
-                      <td><a href="">Modifier</a></td>
-                      <td><button class="delete" value="{{$value['id']}}" onclick="delete_film({{$value['id']}})">Supprimer</button></td>
+                      <td><button class="delete" value="{{$value['id']}}" onclick="delete_film({{$value['id']}})"><i class="glyphicon glyphicon-trash"></i></button></td>
                   </tr>
                   <script>
                   function delete_film(id) {

@@ -1,5 +1,7 @@
 body {
   color: #1f5468;
+  height: 100%;
+  width: 100%;
   /* background-image: url(../assets/projecteur.jpg); */
 }
 
@@ -16,7 +18,7 @@ body {
 .main-content h1 {
   color: #083b57;
   font-family: "Saniretro";
-  font-size: 4em;
+  font-size: 6em;
 }
 
 .btn-list, .btn-go {
@@ -35,7 +37,6 @@ body {
 
 .main-content {
   font-family: "CaviarDreams_Bold";
-  margin-left: -15px;
   padding-left: 0;
   color: #083b57;
 }
@@ -45,14 +46,16 @@ tbody tr:hover {
   color: #fff;
 }
 
-td {
+td, th {
   text-align: left;
+  font-size: 1.4em;
 }
 
 .navbarInline {
   background-color: #d4f1e9;
   font-family: "CaviarDreams_Bold";
-  font-size: 1.2em;
+  font-size: 1.6em;
+  margin-left: 0px;
 }
 
 .navbar-nav {
@@ -70,4 +73,27 @@ td {
 
 #form_user {
   display: none;
+}
+
+.delete:hover {
+  color: red;
+}
+
+.form_film h2 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+.form_film {
+  font-size: 1.3em;
+}
+
+.champs {
+  font-size: 1.2em;
+  font-family: "CaviarDreams_Bold";
+}
+
+.return a {
+  font-size: 2em;
 }
