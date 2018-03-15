@@ -50,5 +50,10 @@
     {
       return $this->orm->find($table, $this->params);
     }
+
+    public function count()
+    {
+      return $this->orm->count($this->table, $this->params);
+    }
   }
 ?>

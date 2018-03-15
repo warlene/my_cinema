@@ -19,4 +19,8 @@ window.onload = function()
            recap.style.display = 'none';
        }
    }
+
+   $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
 }

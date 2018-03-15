@@ -32,7 +32,7 @@
       $filmModel = new FilmModel(["WHERE" => "id = " . $params[0]], "");
       $film = $filmModel->find('film');
       $film = $film[0];
-      $genre = new FilmModel(["WHERE" => "id_genre = " . $film['id_genre']], "");
+      $genre = new FilmModel(["WHERE" => "id = " . $film['id_genre']], "");
       $genreName = $genre->find('genre');
       $genreName = $genreName[0];
       $this->render('info_film', ['genre' => $genreName['nom'],
@@ -86,7 +86,7 @@
     public function modifyAction($id)
     {
       $film = new FilmModel(["id" =>  $id[0]], "film");
-      $req_genre = new FilmModel(["WHERE" => "id_genre = '" . $film->id_genre . "'"], "");
+      $req_genre = new FilmModel(["WHERE" => "id = '" . $film->id_genre . "'"], "");
       $genreName = $req_genre->find('genre');
       $req_distrib = new FilmModel(["WHERE" => "id_distrib = '" . $film->id_distrib . "'"], "");
       $distribName = $req_distrib->find('distrib');
@@ -139,14 +139,14 @@
 
     private function get_genre()
     {
-      $genreModel = new FilmModel([], "");
+      $genreModel = new FilmModel(["ORDER BY" => "nom ASC"], "");
       $genre = $genreModel->find('genre');
       return $genre;
     }
 
     private function get_distrib()
     {
-      $distribModel = new FilmModel([], "");
+      $distribModel = new FilmModel(["ORDER BY" => "nom ASC"], "");
       $distrib = $distribModel->find('distrib');
       return $distrib;
     }
@@ -156,7 +156,7 @@
       $genre = $this->get_genre();
       $params_genre = [];
       for ($i=0; $i<count($genre); $i++) {
-        $params_genre[$genre[$i]['id_genre']] = $genre[$i]['nom'];
+        $params_genre[$genre[$i]['id']] = $genre[$i]['nom'];
       }
 
       $distrib = $this->get_distrib();

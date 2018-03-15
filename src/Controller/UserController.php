@@ -71,7 +71,7 @@
       $genre = $req->find('genre');
       $params_genre = [];
       for ($i=0; $i<count($genre); $i++) {
-        $params_genre[$genre[$i]['id_genre']] = $genre[$i]['nom'];
+        $params_genre[$genre[$i]['id']] = $genre[$i]['nom'];
       }
       $this->render('show', ["genre" => $params_genre,
                              "best_film" => $tab->best_film,
@@ -104,4 +104,14 @@
       }
     }
 
+    public function deleteProfilAction($id)
+    {
+      $user = new userModel(["id" => $id[0]], "users");
+      $delete = $user->delete();
+      if ($delete) {
+        $this->render('deleteValidate');
+        $_SESSION = array();
+        session_destroy();
+      }
+    }
   }

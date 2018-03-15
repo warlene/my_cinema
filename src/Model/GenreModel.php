@@ -3,7 +3,7 @@
 
   use \PDO;
 
-  class UserModel extends \Core\Entity
+  class GenreModel extends \Core\Entity
   {
     public function __construct($params, $table)
     {
@@ -19,10 +19,15 @@
     {
       return parent::find($table);
     }
-    
+
     public function delete()
     {
       return parent::delete();
+    }
+
+    public function count()
+    {
+      return parent::count();
     }
   }
 ?>

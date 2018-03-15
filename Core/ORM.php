@@ -85,4 +85,20 @@
       }
       return false;
     }
+
+    public function count($table, $params = array('WHERE' => '1', 'ORDER BY' => 'id ASC'))
+    {
+      $select = "SELECT COUNT(*) FROM $table ";
+      foreach ($params as $key => $value) {
+        if ($key != 'LIMIT' || $key == 'LIMIT' && !empty($value)) {
+          $select .= "$key $value ";
+        }
+      }
+      $req = $this->pdo->query($select);
+      if ($req) {
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        return $result;
+      }
+      return false;
+    }
   }

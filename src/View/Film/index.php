@@ -48,7 +48,6 @@
                   <script>
                   function delete_film(id) {
                     if (confirm("Êtes-vous sûr de vouloir supprimer ce film?")) {
-                      console.log("http://localhost/work/PiePHP/film/delete/"+id);
                       document.location.href = "http://localhost/work/PiePHP/film/delete/"+id;
                     }
                   }
