@@ -6,20 +6,15 @@
 
             <h2>Vos informations personnelles</h2>
 
-            <div id="recap" class="info_user">
+            <div id="recap_info" class="info_user">
                <h4>Nom : <?= htmlspecialchars($lastname)?></h4>
                <h4>Prénom : <?= htmlspecialchars($firstname)?></h4>
                <h4>Email : <?= htmlspecialchars($email)?></h4>
                <h4>Mot de passe : *****</h4>
-
-               <h2>Vos préférences</h2>
-               <h4>Votre film préféré : <?= htmlspecialchars($best_film)?></h4>
-               <h4>Vos genres préférés : <?= htmlspecialchars($genres)?></h4>
-               <h4>Votre dernier film vu : <?= htmlspecialchars($last_film)?></h4>
                <button class="btn add" id="info_user">Modifier vos informations</button>
             </div>
 
-            <div id="form_user">
+            <div id="form_info">
               <form method='POST' action=''>
                 <div class="form-group row">
                   <label for="lastname" class="col-4 col-form-label">Nom</label>
@@ -51,7 +46,29 @@
                     <input class="form-control" type="password" name="password2">
                   </div>
                 </div>
-                <h2>Vos préférences</h2>
+                <div class="form-group row">
+                  <label for="resum" class="col-4 col-form-label"></label>
+                  <div class="col-2">
+                    <input class="btn add" type="submit" value="Ajouter" id="valider">
+                  </div>
+                  <div class="col-2">
+                    <input class="btn add" type="submit" value="retour" id="retour_info">
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div id="recap_pref" class="info_user">
+               <h2>Vos préférences</h2>
+               <h4>Votre film préféré : <?= htmlspecialchars($best_film)?></h4>
+               <h4>Vos genres préférés : <?= htmlspecialchars($genres)?></h4>
+               <h4>Votre dernier film vu : <?= htmlspecialchars($last_film)?></h4>
+               <button class="btn add" id="preference">Modifier vos préférences</button>
+            </div>
+
+            <div id="form_pref">
+              <h2>Vos préférences</h2>
+              <form method='POST' action=''>
                 <div class="form-group row">
                   <label for="title_film" class="col-4 col-form-label">votre film préféré</label>
                   <div class="col-4">
@@ -77,12 +94,16 @@
                 </div>
                 <div class="form-group row">
                   <label for="resum" class="col-4 col-form-label"></label>
-                  <div class="col-4">
-                    <input class="btn add" type="submit" value="Ajouter" id="valider">
+                  <div class="col-2">
+                    <input class="btn add" type="submit" value="Ajouter" id="modifier">
+                  </div>
+                  <div class="col-2">
+                    <input class="btn add" type="submit" value="retour" id="retour_pref">
                   </div>
                 </div>
               </form>
             </div>
+
           </div>
         </div>
     </div>

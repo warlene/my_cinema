@@ -31,7 +31,7 @@
       </div>
   </div>
   <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-10 col-lg-offset-1">
           <table class="table" id="table">
               <thead>
                   <tr>

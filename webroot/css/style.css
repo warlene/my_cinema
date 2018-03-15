@@ -71,7 +71,11 @@ td, th {
   text-align: left;
 }
 
-#form_user {
+#form_info {
+  display: none;
+}
+
+#form_pref {
   display: none;
 }
 
@@ -96,4 +100,8 @@ td, th {
 
 .return a {
   font-size: 2em;
+}
+
+.tableau {
+  background-color: red;
 }

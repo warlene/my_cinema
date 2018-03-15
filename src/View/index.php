@@ -41,7 +41,7 @@
                               </ul>
                           </div>
                     </li> -->
-                    <li>historique</li>
+                    <!-- <li>historique</li> -->
                   </ul>
               </div>
           </div>
@@ -60,6 +60,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="/work/PiePHP/user/profil/<?= $_SESSION['id_user']; ?>">Voir mon profil</a>
+                      <a class="dropdown-item" href="/work/PiePHP/user/historique/<?= $_SESSION['id_user']; ?>">Votre historique</a>
                       <a class="dropdown-item" onclick="delete_user(<?= $_SESSION['id_user']; ?>)">Supprimer mon compte</a>
                     </div>
                   </li>
