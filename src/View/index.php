@@ -30,18 +30,6 @@
                     <li><a href="/work/PiePHP/film">Filmothèque</a></li>
                     <li><a href="/work/PiePHP/film/add">Ajouter un film</a></li>
                     <li><a href="/work/PiePHP/genre">Liste des genres</a></li>
-
-                    <!-- <li>
-                      <a data-toggle="collapse" href="#collapseGenre" role="button" aria-expanded="false" aria-controls="collapseGenre">genre</a>
-                          <div class="collapse" id="collapseGenre">
-                              <ul class="underlist">
-                                <li><a href="/work/PiePHP/genre">Liste des genres</a></li>
-                                <li><a href="#">Modifier un genre</a></li>
-                                <li><a href="#">Supprimer un genre</a></li>
-                              </ul>
-                          </div>
-                    </li> -->
-                    <!-- <li>historique</li> -->
                   </ul>
               </div>
           </div>
@@ -60,7 +48,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="/work/PiePHP/user/profil/<?= $_SESSION['id_user']; ?>">Voir mon profil</a>
-                      <a class="dropdown-item" href="/work/PiePHP/user/historique/<?= $_SESSION['id_user']; ?>">Votre historique</a>
+                      <a class="dropdown-item" href="/work/PiePHP/historique/index/<?= $_SESSION['id_user']; ?>">Votre historique</a>
                       <a class="dropdown-item" onclick="delete_user(<?= $_SESSION['id_user']; ?>)">Supprimer mon compte</a>
                     </div>
                   </li>

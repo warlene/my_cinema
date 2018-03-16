@@ -73,16 +73,24 @@
       for ($i=0; $i<count($genre); $i++) {
         $params_genre[$genre[$i]['id']] = $genre[$i]['nom'];
       }
+      $last = new UserModel(["WHERE" => "id_membre = " . $id[0], "ORDER BY" => "date DESC", "LIMIT" => "1"], "");
+      $last_film = $last->find('historique_membre');
+      if (!$last_film) {
+        $last_film = "Pas de film dans l'historique.";
+      }
+      $best_film =  (isset($tab->best_film)) ? $tab->best_film : '';
+      $genres =  (isset($tab->genres)) ? $tab->genres : '';
+
       $this->render('show', ["genre" => $params_genre,
-                             "best_film" => $tab->best_film,
-                             "genres" => $tab->genres,
-                             "last_film" => $tab->last_film,
+                             "best_film" => $best_film,
+                             "genres" => $genres,
+                             "last_film" => $last_film[0]['last_film'],
                              "lastname" => $user->lastname,
                              "firstname" => $user->firstname,
                              "email" => $user->email]);
 
-      if(isset($this->request->best_film)) {
-        if (!empty($this->request->password) && !empty($this->request->password)) {
+      if (isset($this->request->lastname)) {
+        if (!empty($this->request->password) && !empty($this->request->password2)) {
           if ($this->request->password === $this->request->password2) {
             $check = new UserModel(['id' => intval($id[0]),
                                     "lastname" => $this->request->lastname,
@@ -90,11 +98,6 @@
                                     "email" => $this->request->email,
                                     "password" => sha1($this->request->password)], "");
             $add_user = $check->save('users');
-            $film = new UserModel(["id" => $_SESSION['id_user'],
-                                   "best_film" => $this->request->best_film,
-                                   "genres" => $this->request->genres,
-                                   "last_film" => $this->request->last_film], "");
-            $add_pref = $film->save('info_user');
           } else {
             echo "Les mots de passe ne sont pas identiques." ;
           }
@@ -102,11 +105,25 @@
           echo "Veuillez remplir le mot de passe." ;
         }
       }
+      if(isset($this->request->best_film)) {
+        if (isset($this->request->genres)) {
+          $genre = $this->request->genres;
+        } else {
+          $genre = "";
+        }
+         $pref = new UserModel(["id" => $_SESSION['id_user'],
+                                "best_film" => $this->request->best_film,
+                                "genres" => $genre], "");
+         $add_pref = $pref->save('info_user');
+         $film = new UserModel(["id_membre" => $_SESSION['id_user'],
+                                "last_film" => $this->request->last_film], "");
+         $add_film = $film->create('historique_membre');
+        }
     }
 
     public function deleteProfilAction($id)
     {
-      $user = new userModel(["id" => $id[0]], "users");
+      $user = new UserModel(["id" => $id[0]], "users");
       $delete = $user->delete();
       if ($delete) {
         $this->render('deleteValidate');
@@ -114,4 +131,5 @@
         session_destroy();
       }
     }
+
   }

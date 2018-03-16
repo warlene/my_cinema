@@ -55,5 +55,10 @@
     {
       return $this->orm->count($this->table, $this->params);
     }
+
+    public function deleteHistory($table)
+    {
+      return $this->orm->deleteHistory($table, $this->params['last_film'], $this->params['id']);
+    }
   }
 ?>

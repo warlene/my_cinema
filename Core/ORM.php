@@ -101,4 +101,15 @@
       }
       return false;
     }
+
+    public function deleteHistory($table, $film, $id)
+    {
+      $delete = "DELETE FROM $table WHERE last_film = '" . $film . "' AND id_membre = $id";
+      $req = $this->pdo->query($delete);
+
+      if ($req) {
+        return true;
+      }
+      return false;
+    }
   }

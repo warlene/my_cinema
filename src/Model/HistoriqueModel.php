@@ -3,7 +3,7 @@
 
   use \PDO;
 
-  class UserModel extends \Core\Entity
+  class HistoriqueModel extends \Core\Entity
   {
     public function __construct($params, $table)
     {
@@ -28,6 +28,11 @@
     public function create($table)
     {
       return parent::create($table);
+    }
+
+    public function deleteHistory($table)
+    {
+      return parent::deleteHistory($table);
     }
   }
 ?>

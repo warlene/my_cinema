@@ -9,6 +9,10 @@
   Router::connect('/user/profil/',  ['controller' => 'user', 'action' => 'profil']);
   Router::connect('/user/delete/',  ['controller' => 'user', 'action' => 'deleteProfil']);
 
+  Router::connect('/historique/index/',  ['controller' => 'historique', 'action' => 'index']);
+  Router::connect('/historique/delete/',  ['controller' => 'historique', 'action' => 'delete']);
+
+
   Router::connect('/film',  ['controller' => 'film', 'action' => 'index']);
   Router::connect('/film/info/',  ['controller' => 'film', 'action' => 'info_film']);
   Router::connect('/film/add',  ['controller' => 'film', 'action' => 'add_film']);
