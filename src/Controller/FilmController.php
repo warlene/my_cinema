@@ -9,7 +9,7 @@
 
     public function indexAction()
     {
-      $filmModel = new FilmModel(["ORDER BY" => "titre ASC", "LIMIT" => "20"], "");
+      $filmModel = new FilmModel(["ORDER BY" => "titre ASC"], "");
       $film = $filmModel->find('film');
       $genre = $this->get_genre();
       $this->render('index', ['film' => $film,

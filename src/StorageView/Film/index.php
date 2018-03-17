@@ -2,14 +2,14 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-8 col-lg-offset-2">
           <div class="page-header">
               <h1>La Filmotheque de MyCinema</h1>
           </div>
       </div>
   </div>
   <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-8 col-lg-offset-2 ">
         <div class="delete_film"></div>
           <h3>Liste de tous les films</h3>
       </div>

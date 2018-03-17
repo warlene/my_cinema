@@ -61,10 +61,13 @@
 
 .main-content {
   text-align: center;
-}
-
-.info_film {
-  text-align: left;
+  height: 100%;
+  font-family: "CaviarDreams_Bold";
+  padding: 0;
+  color: #083b57;
+  background-image: url(../assets/ticket.png);
+  background-size: auto;
+  /* background-image: url(../assets/projecteur.jpg); */
 }
 
 .form_film {

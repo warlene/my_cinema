@@ -2,14 +2,14 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+      <div class="col-lg-8 col-lg-offset-2">
             <div class="page-header">
                 <h1>La filmothèque de MyCinema</h1>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+      <div class="col-lg-8 col-lg-offset-2">
             <h3>Résultats pour : "<?= htmlspecialchars($search)?>"</h3>
         </div>
     </div>

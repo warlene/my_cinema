@@ -1,7 +1,7 @@
 <?php if (!isset($_SESSION)) { session_start(); } ?>
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
+      <div class="col-lg-8 col-lg-offset-2">
             <div class="form_film">
               <h2>Modifier la fiche de "{{$titre}}"</h2>
               <form method='POST' action='/work/PiePHP/film/modifyValid' role="form">

@@ -1,8 +1,9 @@
-body {
+html, body {
   color: #1f5468;
   height: 100%;
   width: 100%;
-  /* background-image: url(../assets/projecteur.jpg); */
+  padding: 0;
+  margin: 0;
 }
 
 @font-face {
@@ -35,12 +36,6 @@ body {
   margin-left: 10px;
 }
 
-.main-content {
-  font-family: "CaviarDreams_Bold";
-  padding-left: 0;
-  color: #083b57;
-}
-
 tbody tr:hover {
   background-color: #f4975e;
   color: #fff;
@@ -67,8 +62,29 @@ td, th {
   margin-right: auto;
 }
 
+.container {
+  width: 80%;
+  margin-bottom: 34%;
+  border: 20px solid #1f5468;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.file {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .info_film {
-  text-align: left;
+  display: block;
+  text-align: center;
+  font-size: 1.4em;
+  margin: 10%;
+  border: 30px solid #1f5468;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* border-image: url('../assets/logo_cinema.jpg') 20; */
 }
 
 #form_info {
